@@ -8,6 +8,7 @@ public class Controlador {
     int playlist = 0;
     int PosicionPlaylist = 0;
     boolean Telefono = false;
+    boolean Llamada = false;
 
     public void Iniciar(Vista vista1){
         Radio radio1 = new Radio();
@@ -153,13 +154,67 @@ public class Controlador {
                         }
                     }
                     if(menuTel ==2){
-                        
+                        if(Telefono == true){
+                        vista1.MostrarMensaje(telefono1.MostrarContactos());
+                        for(int i = 0; i <= telefono1.Contactos.size()-1;i++){
+                            vista1.MostrarMensaje(telefono1.Contactos.get(i));
+                        }
+                        }
+
+                        else{
+                            vista1.MostrarMensaje("El telefono esta apagado");
+                        }
                     }
 
-
-
-
-
+                    if(menuTel == 3){
+                        if(Telefono == true){
+                            vista1.MostrarMensaje("Contactos Guardados: ");
+                            for(int i = 0; i <= telefono1.Contactos.size()-1;i++){
+                                vista1.MostrarMensaje(i+". "+telefono1.Contactos.get(i));
+                            }
+                            int llamar = vista1.LlamarContatos();
+                            vista1.MostrarMensaje("Se esta llamando a "+telefono1.Contactos.get(llamar));
+                            vista1.MostrarMensaje(telefono1.LlamarContacto());
+                            Llamada = true;
+                        }
+                        else{
+                            vista1.MostrarMensaje("El telefono esta apagado");
+                        }
+                    }
+                    if(menuTel == 4){
+                        if(Telefono == true){
+                            if(Llamada == true){
+                                vista1.MostrarMensaje(telefono1.FinalizarLLamada());
+                                Llamada = false;
+                            }
+                            if(Llamada == false){
+                                vista1.MostrarMensaje("No hay llamada activa");
+                            }
+                        }
+                        if(Telefono == false){
+                            vista1.MostrarMensaje("El telefono esta apagado");
+                        }
+                    }
+                    if(menuTel == 5){
+                        if(Telefono == true){
+                            if(Llamada == true){
+                                vista1.MostrarMensaje(telefono1.PonerEnEspera());
+                                Llamada = false;
+                            }
+                            if(Llamada == false){
+                                vista1.MostrarMensaje("No hay llamada activa");
+                            }
+                        }
+                        if(Telefono == false){
+                            vista1.MostrarMensaje("El telefono esta apagado");
+                        }
+                    }
+                }
+                if(MenuP == 5){
+                    vista1.MostrarMensaje("El pronostico del clima es Nublado");
+                }
+                if(MenuP == 6){
+                    break;
                 }
         }
     }

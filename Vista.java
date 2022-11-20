@@ -86,6 +86,11 @@ public class Vista {
         System.out.println("5. Cambiar a llamada en espera");
         return solicitarI("");
     }
+    public int LlamarContatos(){
+        System.out.println("Elije un contacto para llamar: ");
+
+        return solicitarI("");
+    }
 
 
 }
