@@ -32,13 +32,14 @@ public class Radio implements iRadio {
     @Override
     public String guardaremisora() {
         
-        Respuesta = "Se ha guardadol la estacion actual";
+        Respuesta = "Se ha guardado la estacion actual";
         return Respuesta;
     }
 
     @Override
     public String cargaremisora() {
-        
+
+        Respuesta = "Se ha cargado correctamente la estacion";
         return Respuesta;
     }
     

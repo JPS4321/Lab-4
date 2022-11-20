@@ -14,11 +14,27 @@ public class Vista {
         return solicitarI("");
     }
 
+    public int MenuReproduccion(){
+        System.out.println("1. Seleccionar Playlist");
+        System.out.println("2. Cambiar Cancion");
+        System.out.println("3. Ver Info de la cancion");
+        return solicitarI("");
+    }
+    public int cambiarCancion(){
+        System.out.println("Deseas: 1. Adelantar La cancion, 2. Regresar a la cancion anterior");
+        return solicitarI("");
+    }
+
+
     public int MenuVolumen(){
         System.out.println("Desea Subir o Disminuir el volumen? 0.Subir, 1. Bajar");
         return solicitarI("");
     }
     
+    public int ElegirCargar(){
+        System.out.println("Elije una estacion para cargar:");
+        return solicitarI("");
+    }
     public int MenuEstacion(){
         System.out.println("Desea aumentar la posicion de la emisora o disminuirla? 0. Aumentar., 1. Disminuir");
         return solicitarI("");
@@ -61,6 +77,15 @@ public class Vista {
         System.out.println("\n" + text);
     }
 
+    public int menuTelefono(){
+
+        System.out.println("1. Conectar/ Desconectar Telefono");
+        System.out.println("2. Mostrar Contactos");
+        System.out.println("3. Llamar a contacto");
+        System.out.println("4. Finalizar Llamada");
+        System.out.println("5. Cambiar a llamada en espera");
+        return solicitarI("");
+    }
 
 
 }
