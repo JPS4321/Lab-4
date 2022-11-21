@@ -14,6 +14,7 @@ public class Controlador {
         Radio radio1 = new Radio();
         Reproduccion reproduccion1 = new Reproduccion();
         Telefono telefono1 = new Telefono();
+        Productividad produ1 = new Productividad();
 
         while( ciclo == true){
             int MenuP = vista1.MenuIncial();
@@ -211,7 +212,7 @@ public class Controlador {
                     }
                 }
                 if(MenuP == 5){
-                    vista1.MostrarMensaje("El pronostico del clima es Nublado");
+                    vista1.MostrarMensaje(produ1.vertiempo());
                 }
                 if(MenuP == 6){
                     break;
